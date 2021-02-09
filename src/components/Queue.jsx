@@ -7,7 +7,7 @@ const Queue = () => {
   const { state: { queueClient } } = useContext(AppContext)
 
   const handleImage = (client) => {
-    return `/public/images/${client.toLowerCase()}.png`
+    return `/images/${client.toLowerCase()}.png`
   }
 
   useEffect(() => {
@@ -28,16 +28,3 @@ const Queue = () => {
 }
 
 export default Queue
-
-
-  // const list = ['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard']
-
-  // const whoIsNext = (names, r) => {
-  //   let geekNames = names.length
-  //   while (r > geekNames) {
-  //     r = r - geekNames
-  //     geekNames = geekNames * 2
-  //   }
-
-  //   return names[Math.ceil(r / (geekNames / names.length)) - 1]
-  // }

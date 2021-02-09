@@ -9,7 +9,8 @@ export function AppContextProvider({ children }) {
     running: false,
     drinksAvailable: 1,
     iteration: 0,
-    queueClient: []
+    queueClient: [],
+    clientList: ['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard']
   })
 
   const addIteration = useCallback(
@@ -40,7 +41,7 @@ export function AppContextProvider({ children }) {
     if (running) {
       if (iteration < drinksAvailable) {
         interval = setInterval(() => {
-          addIteration({ newClient: whoIsNext(iteration + 1)})
+          addIteration({ newClient: whoIsNext( state.clientList, iteration + 1)})
         }, 1000)
       } else {
         reset({ flag: false })
@@ -51,15 +52,6 @@ export function AppContextProvider({ children }) {
     }
     return () => clearInterval(interval)
   }, [running, iteration, drinksAvailable, addIteration, reset])
-
-
-
-  const addClient = ({ client }) => {
-    setState({
-      ...state,
-      queueClient: [...state.queueClient, client]
-    })
-  }
 
   const toggleRunning = () => {
     setState({
@@ -77,7 +69,7 @@ export function AppContextProvider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ state, addClient, toggleRunning, changeDrinksAvailable, reset }}>
+    <Context.Provider value={{ state, toggleRunning, changeDrinksAvailable, reset }}>
       {children}
     </Context.Provider>
   )

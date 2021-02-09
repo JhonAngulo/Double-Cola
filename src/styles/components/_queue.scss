@@ -7,12 +7,14 @@
   &__title {
     background-color: $background-secondary;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     color: $white_color;
+    border-bottom: 2px solid $primary-color;
   }
 
   &__list {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
+    margin-top: 20px;
   }
 }

@@ -1,5 +1,5 @@
 .btn {
-  padding: 4px 8px;
+  padding: 6px 14px;
   margin: 0 8px;
   background-color: $primary-color;
   color: $white_color;
@@ -7,9 +7,12 @@
   border-radius: 6px;
   border: none;
   outline: none;
-  transition: background-color 1s ease;
+  transition: background-color .5s ease;
+  text-transform: uppercase;
+  font-weight: 500;
+  @include shadow;
 
   &:hover {
-    background-color: red;
+    background-color: $background_secondary;
   }
 }

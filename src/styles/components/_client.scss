@@ -3,6 +3,8 @@
   background-color: $secondary_color;
   margin-bottom: 10px;
   border-radius: 25px 8px 8px 25px;
+  @include shadow;
+  @include animationIn;
 
   &__img {
     width: 50px;
@@ -13,7 +15,7 @@
 
   &__detail {
     margin: auto 0;
-    margin-left: 10px;
+    margin-left: 20px;
     color: $white_color;
 
     &-title {
