@@ -4,10 +4,11 @@ import Setup from './components/Setup'
 import Queue from './components/Queue'
 
 const App = () => {
+
   return (
     <Layout>
       <Setup />
-      <Queue list={[]} />
+      <Queue />
     </Layout>
   )
 }

@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../context/AppContext'
 
 const Controls = () => {
+
+  const { state: { running, drinksAvailable }, toggleRunning, changeDrinksAvailable, reset } = useContext(AppContext)
+
+  const handleRunning = () => {
+    toggleRunning()
+  }
+
+  const handleInput = (e) => {
+    changeDrinksAvailable({ value: e.target.value })
+  }
+
+  const handleReset = () => {
+    reset({ flag: true})
+  }
+
   return (
     <div>
-      <input type="number" value={1} min="0" max="100" />
-      <button className='btn' >Start</button>
-      <button className='btn' >Reset</button>
+      <label>
+        Drins Aviliable:
+      <input type="number" min="1" max="100" value={drinksAvailable} onChange={handleInput} />
+      </label>
+      <button className='btn' onClick={handleRunning} >{running ? 'Stop' : 'Start'}</button>
+      <button className='btn' onClick={handleReset} >Reset</button>
     </div>
   )
 }

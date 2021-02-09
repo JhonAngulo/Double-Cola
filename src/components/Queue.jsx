@@ -1,16 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import Client from './Client'
+import AppContext from '../context/AppContext'
 
-const Queue = ({ list }) => {
+const Queue = () => {
+
+  const { state: { queueClient } } = useContext(AppContext)
+
+  const handleImage = (client) => {
+    return `/public/images/${client.toLowerCase()}.png`
+  }
 
   useEffect(() => {
-    
-  }, [list])
+
+  }, [queueClient])
   return (
-    <div>
-      <h2>client served</h2>
-      {
-        list.map((person, index) => <p key={index}>{person}</p>)
-      }
+    <div className='container-queue'>
+      <h2 className='container-queue__title'>client served: {queueClient.length}</h2>
+      <div className='container-queue__list'>
+        {
+          
+          queueClient.map((client, index) => <Client key={`client_${index}`} name={client} img={handleImage(client)} />)
+        }
+      </div>
+
     </div>
   )
 }
