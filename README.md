@@ -1,4 +1,4 @@
-# Introducción a la aplicación Create React
+# Prueba Tecnica Double Cola | Codewars
 
 Este proyecto se inició con [Create React App](https://github.com/facebook/create-react-app).
 
