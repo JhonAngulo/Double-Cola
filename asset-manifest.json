@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Double-queue/static/css/main.4a12d93f.chunk.css",
-    "main.js": "/Double-queue/static/js/main.33413e52.chunk.js",
-    "main.js.map": "/Double-queue/static/js/main.33413e52.chunk.js.map",
+    "main.js": "/Double-queue/static/js/main.b1c5c4cd.chunk.js",
+    "main.js.map": "/Double-queue/static/js/main.b1c5c4cd.chunk.js.map",
     "runtime-main.js": "/Double-queue/static/js/runtime-main.9b79960d.js",
     "runtime-main.js.map": "/Double-queue/static/js/runtime-main.9b79960d.js.map",
     "static/js/2.635b10cd.chunk.js": "/Double-queue/static/js/2.635b10cd.chunk.js",
@@ -10,12 +10,13 @@
     "index.html": "/Double-queue/index.html",
     "static/css/main.4a12d93f.chunk.css.map": "/Double-queue/static/css/main.4a12d93f.chunk.css.map",
     "static/js/2.635b10cd.chunk.js.LICENSE.txt": "/Double-queue/static/js/2.635b10cd.chunk.js.LICENSE.txt",
-    "static/media/global.scss": "/Double-queue/static/media/Roboto-Regular.03523cf5.ttf"
+    "static/media/global.scss": "/Double-queue/static/media/Roboto-Regular.03523cf5.ttf",
+    "static/media/machine.45ef2e02.png": "/Double-queue/static/media/machine.45ef2e02.png"
   },
   "entrypoints": [
     "static/js/runtime-main.9b79960d.js",
     "static/js/2.635b10cd.chunk.js",
     "static/css/main.4a12d93f.chunk.css",
-    "static/js/main.33413e52.chunk.js"
+    "static/js/main.b1c5c4cd.chunk.js"
   ]
 }
