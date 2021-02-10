@@ -1,13 +1,13 @@
 import React from 'react'
 import Layout from './pages/Layout'
-import Setup from './components/Setup'
+import Hero from './components/Hero'
 import Queue from './components/Queue'
 
 const App = () => {
 
   return (
     <Layout>
-      <Setup />
+      <Hero />
       <Queue />
     </Layout>
   )

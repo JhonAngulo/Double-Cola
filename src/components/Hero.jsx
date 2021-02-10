@@ -1,10 +1,10 @@
 import React from 'react'
 import Controls from './Controls'
 
-const Setup = () => {
+const Hero = () => {
   return (
     <div className='container-setup'>
-      <h2 className='container-setup-title'>Setup</h2>
+      <h2 className='container-setup-title'>welcome to the drink machine</h2>
       <div className='container-machine'>
         <img src='/images/machine.png' alt='machine' />
         <Controls />
@@ -13,4 +13,4 @@ const Setup = () => {
   )
 }
 
-export default Setup
+export default Hero

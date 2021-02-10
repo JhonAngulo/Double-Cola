@@ -1,17 +1,12 @@
 import { createContext, useState, useEffect, useCallback } from 'react'
 import { whoIsNext } from '../hooks/useWhoIsNext'
+import { initialState } from './initialState'
 
 const Context = createContext({})
 
 export function AppContextProvider({ children }) {
 
-  const [state, setState] = useState({
-    running: false,
-    drinksAvailable: 1,
-    iteration: 0,
-    queueClient: [],
-    clientList: ['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard']
-  })
+  const [state, setState] = useState(initialState)
 
   const addIteration = useCallback(
     ({ newClient }) => {
@@ -34,14 +29,14 @@ export function AppContextProvider({ children }) {
     }, [state]
   )
 
-  const { running, iteration, drinksAvailable } = state
+  const { running, iteration, drinksAvailable, clientList } = state
 
   useEffect(() => {
     let interval = null
     if (running) {
       if (iteration < drinksAvailable) {
         interval = setInterval(() => {
-          addIteration({ newClient: whoIsNext( state.clientList, iteration + 1)})
+          addIteration({ newClient: whoIsNext(clientList, iteration + 1) })
         }, 1000)
       } else {
         reset({ flag: false })
@@ -51,13 +46,13 @@ export function AppContextProvider({ children }) {
       clearInterval(interval)
     }
     return () => clearInterval(interval)
-  }, [running, iteration, drinksAvailable, addIteration, reset])
+  }, [running, iteration, drinksAvailable, addIteration, clientList, reset])
 
   const toggleRunning = () => {
     setState({
       ...state,
       running: !state.running,
-      queueClient: !state.running && state.iteration === 0 ? [] : [...state.queueClient] 
+      queueClient: !state.running && state.iteration === 0 ? [] : [...state.queueClient]
     })
   }
 
@@ -68,8 +63,14 @@ export function AppContextProvider({ children }) {
     })
   }
 
+  const actions = {
+    toggleRunning,
+    changeDrinksAvailable,
+    reset
+  }
+
   return (
-    <Context.Provider value={{ state, toggleRunning, changeDrinksAvailable, reset }}>
+    <Context.Provider value={{ state, actions }}>
       {children}
     </Context.Provider>
   )

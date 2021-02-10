@@ -2,6 +2,7 @@
   display: flex;
   background-color: $secondary_color;
   margin-bottom: 10px;
+  margin-right: 10px;
   border-radius: 25px 8px 8px 25px;
   @include shadow;
   @include animationIn;
@@ -17,10 +18,19 @@
     margin: auto 0;
     margin-left: 20px;
     color: $white_color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+
 
     &-title {
       text-transform: capitalize;
       margin-bottom: 2px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.43;
+    letter-spacing: 0.01071em;
     }
   }
 

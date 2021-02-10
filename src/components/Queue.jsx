@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import Client from './Client'
 import AppContext from '../context/AppContext'
 
@@ -10,17 +10,22 @@ const Queue = () => {
     return `/images/${client.toLowerCase()}.png`
   }
 
-  useEffect(() => {
+  const clientEndRef = useRef(null)
+  const scrollToBottom = () => {
+    clientEndRef.current.scrollIntoView({ behavior: "smooth" });
+  }
 
+  useEffect(() => {
+    scrollToBottom()
   }, [queueClient])
   return (
     <div className='container-queue'>
-      <h2 className='container-queue__title'>client served: {queueClient.length}</h2>
+      <h2 className='container-queue__title'>Queue: {queueClient.length}</h2>
       <div className='container-queue__list'>
         {
-          
           queueClient.map((client, index) => <Client key={`client_${index}`} name={client} img={handleImage(client)} />)
         }
+        <div ref={clientEndRef}></div>
       </div>
 
     </div>
