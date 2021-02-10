@@ -1,10 +1,11 @@
 .container-queue {
+  min-height: 100%;
   background-color: $background-secondary;
-  height: 100vh;
-  justify-content: center;
+
 
   &__title {
     background-color: $background-secondary;
+    color: $white_color;
     text-align: center;
     padding: 20px 0;
     border-bottom: 2px solid $primary-color;
@@ -12,12 +13,12 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.01071em;
-    color: $white_color;
   }
 
   &__list {
-    width: 60%;
-    height: 80%;
+    box-sizing: border-box;
+    width: 240px;
+    height: 76%;
     overflow-y: auto;
     margin: 0 auto;
     margin-top: 20px;

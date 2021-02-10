@@ -1,0 +1,17 @@
+.alert {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  border-radius: 4px;
+  letter-spacing: 0.01071em;
+  background-color: transparent;
+
+  &.info {
+    color: #09243a;
+    background-color: #b2d0e6;
+  }
+}

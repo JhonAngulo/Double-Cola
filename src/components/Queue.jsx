@@ -4,7 +4,8 @@ import AppContext from '../context/AppContext'
 
 const Queue = () => {
 
-  const { state: { queueClient } } = useContext(AppContext)
+  const { state } = useContext(AppContext)
+  const { queueClient, running } = state
 
   const handleImage = (client) => {
     return `/images/${client.toLowerCase()}.png`
@@ -16,8 +17,11 @@ const Queue = () => {
   }
 
   useEffect(() => {
-    scrollToBottom()
-  }, [queueClient])
+    if (running) {
+      scrollToBottom()
+    }
+  }, [queueClient, running])
+
   return (
     <div className='container-queue'>
       <h2 className='container-queue__title'>Queue: {queueClient.length}</h2>

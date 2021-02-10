@@ -4,7 +4,7 @@ import AppContext from '../context/AppContext'
 const Controls = () => {
 
   const { state, actions } = useContext(AppContext)
-  const { running, drinksAvailable, queueClient } = state
+  const { running, drinksAvailable, queueClient, iteration } = state
   const { toggleRunning, changeDrinksAvailable, reset } = actions
 
   const handleRunning = () => {
@@ -26,15 +26,18 @@ const Controls = () => {
       <div className='controls'>
         <div className='controls__instructions'>
           <h3 className='controls__instructions-title' >Instructions: </h3>
-          <ol>
-            <li className='controls__instructions-item' >1. set the amount of <strong>drinks available</strong></li>
-            <li className='controls__instructions-item' >2. press start to start delivering the drinks</li>
+          <ol className='controls__instructions-items'>
+            <li className='controls__instructions-item' >set the amount of <strong>drinks available</strong></li>
+            <li className='controls__instructions-item' >press start to start delivering the drinks</li>
           </ol>
         </div>
         <div className='controls__input'>
           <label className='controls__input-label'>
             <span> Drinks available:</span>
-            <input className='controls__input-in' type="number" min="1" max="100" value={drinksAvailable} onChange={handleInput} />
+            <input className='controls__input-in' type="number"
+              min="1" max="100"
+              value={drinksAvailable} onChange={handleInput}
+              disabled={iteration ? true : false} />
           </label>
         </div>
         <div className='controls__buttons' >
@@ -43,9 +46,9 @@ const Controls = () => {
         </div>
 
       </div>
-      <br/>
+      <br />
       {
-        latest && !running && <p>{`The last in the queue was: ${latest}`}</p>
+        latest && !running && <p className='alert info'>{`The last in the queue was: ${latest}`}</p>
       }
     </div>
   )

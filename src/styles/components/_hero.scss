@@ -1,13 +1,15 @@
-.container-setup {
+.container-hero {
+  height: 100%;
   background-color: $background_primary;
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
-  height: 100vh;
+  overflow-y: auto;
 
   &-title {
     font-size: 24px;
     font-weight: 500;
     color: $text_color;
+    margin-bottom: 20px;
   }
 }

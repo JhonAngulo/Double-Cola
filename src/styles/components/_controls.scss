@@ -1,9 +1,17 @@
 .controls {
+  min-width: 200px;
+  max-width: 300px;
   border: 4px solid #253a4c;
   border-radius: 8px;
   padding: 30px 10px;
   background-color: #e6e9ed;
   @include shadow;
+
+  @include lg {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
   &__instructions {
     text-align: left;
@@ -14,6 +22,10 @@
       line-height: 1.8;
       letter-spacing: 0.05071em;
       color: $text_color;
+    }
+
+    &-items {
+      margin-left: 20px;
     }
 
     &-item {
