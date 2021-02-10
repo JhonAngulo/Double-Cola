@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useCallback } from 'react'
-import { whoIsNext } from '../hooks/useWhoIsNext'
+import { whoIsNext } from '../service/getWhoIsNext'
 import { initialState } from './initialState'
 
 const Context = createContext({})
