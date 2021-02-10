@@ -2,12 +2,14 @@ import React, { useEffect, useContext, useRef } from 'react'
 import Client from './Client'
 import AppContext from '../context/AppContext'
 
+// import heroImage from '../assert/images/machine.png'
+
 const Queue = () => {
   const { state } = useContext(AppContext)
   const { queueClient, running } = state
 
   const handleImage = (client) => {
-    return `/images/${client.toLowerCase()}.png`
+    return `../assert/images/${client.toLowerCase()}.png`
   }
 
   const clientEndRef = useRef(null)
