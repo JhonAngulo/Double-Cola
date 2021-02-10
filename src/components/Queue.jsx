@@ -3,7 +3,6 @@ import Client from './Client'
 import AppContext from '../context/AppContext'
 
 const Queue = () => {
-
   const { state } = useContext(AppContext)
   const { queueClient, running } = state
 
@@ -13,7 +12,7 @@ const Queue = () => {
 
   const clientEndRef = useRef(null)
   const scrollToBottom = () => {
-    clientEndRef.current.scrollIntoView({ behavior: "smooth" });
+    clientEndRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   useEffect(() => {

@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import AppContext from '../context/AppContext'
 
 const Controls = () => {
-
   const { state, actions } = useContext(AppContext)
   const { running, drinksAvailable, queueClient, iteration } = state
   const { toggleRunning, changeDrinksAvailable, reset } = actions
@@ -37,7 +36,8 @@ const Controls = () => {
             <input className='controls__input-in' type="number"
               min="1" max="100"
               value={drinksAvailable} onChange={handleInput}
-              disabled={iteration ? true : false} />
+              disabled={iteration}
+            />
           </label>
         </div>
         <div className='controls__buttons' >

@@ -10,5 +10,4 @@ const Client = ({ img, name }) => (
   </div>
 )
 
-
 export default Client
