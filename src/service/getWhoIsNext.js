@@ -1,4 +1,4 @@
-export function whoIsNext(names, r) {
+export function whoIsNext (names, r) {
   let geekNames = names.length
   while (r > geekNames) {
     r = r - geekNames

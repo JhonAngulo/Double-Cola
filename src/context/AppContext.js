@@ -1,11 +1,10 @@
-import { createContext, useState, useEffect, useCallback } from 'react'
+import React, { createContext, useState, useEffect, useCallback } from 'react'
 import { whoIsNext } from '../service/getWhoIsNext'
 import { initialState } from './initialState'
 
 const Context = createContext({})
 
-export function AppContextProvider({ children }) {
-
+export function AppContextProvider ({ children }) {
   const [state, setState] = useState(initialState)
 
   const addIteration = useCallback(
